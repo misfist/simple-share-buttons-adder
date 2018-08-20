@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Simple Share Buttons Adder
+ * Plugin Name: Simple Share Buttons Adder Custom
  * Plugin URI: https://simplesharebuttons.com
  * Description: A simple plugin that enables you to add share buttons to all of your posts and/or pages.
- * Version: 7.4.18
+ * Version: 7.5.0
  * Author: Simple Share Buttons
  * Author URI: https://simplesharebuttons.com
  * License: GPLv2
