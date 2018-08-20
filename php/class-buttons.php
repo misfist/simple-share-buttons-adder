@@ -2,7 +2,7 @@
 /**
  * Buttons.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
@@ -10,7 +10,7 @@ namespace SimpleShareButtonsAdder;
 /**
  * Buttons Class
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 class Buttons {
 
@@ -510,7 +510,7 @@ class Buttons {
 			$html_share_buttons .= '<a data-site="" data-facebook="mobile" class="ssba_facebook_share' . esc_attr( $plus_class ) . '" data-href="' . esc_attr( $url_current_page ) . '" href="https://www.facebook.com/dialog/share?app_id=' . esc_attr( $arr_settings['facebook_app_id'] ) . '&display=popup&href=' . esc_attr( $url_current_page ) . '&redirect_uri=' . esc_url( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 		} else {
 			// Facebook share link.
-			$html_share_buttons .= '<a data-site="" class="ssba_facebook_share' . esc_attr( $plus_class ) . '" href="http://www.facebook.com/sharer.php?u=' . esc_attr( $url_current_page ) . '" ' . $target . $nofollow . '>';
+			$html_share_buttons .= '<a data-site="" class="ssba_facebook_share' . esc_attr( $plus_class ) . '" href="https://www.facebook.com/sharer.php?u=' . esc_attr( $url_current_page ) . '" ' . $target . $nofollow . '>';
 		}
 
 		// If not using custom.
@@ -700,7 +700,7 @@ class Buttons {
 			return $this->ssba_format_number( $sharedcount );
 		} else {
 			// Get results from facebook.
-			$html_facebook_share_details = wp_safe_remote_get( 'http://graph.facebook.com/' . $url_current_page, array(
+			$html_facebook_share_details = wp_safe_remote_get( 'https://graph.facebook.com/' . $url_current_page, array(
 				'timeout' => 6,
 			) );
 
@@ -755,7 +755,12 @@ class Buttons {
 		$html_share_buttons = '';
 
 		// Format the URL into friendly code.
-		$twitter_share_text = rawurlencode( html_entity_decode( $str_page_title . ' ' . $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
+		/*
+		Modified string
+		@since 7.5.0
+		 */
+		// $twitter_share_text = rawurlencode( html_entity_decode( $str_page_title . ' ' . $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
+		$twitter_share_text = rawurlencode( html_entity_decode( $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
 
 		// Add li if plus.
 		if ( 'Y' === $arr_settings['ssba_new_buttons'] || isset( $arr_settings['bar_call'] ) ) {
@@ -763,7 +768,7 @@ class Buttons {
 		}
 
 		// Twitter share link.
-		$html_share_buttons .= '<a data-site="" class="ssba_twitter_share' . esc_attr( $plus_class ) . '" href="http://twitter.com/share?url=' . esc_attr( $url_current_page ) . '&amp;text=' . esc_attr( $twitter_share_text ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+		$html_share_buttons .= '<a data-site="" class="ssba_twitter_share' . esc_attr( $plus_class ) . '" href="https://twitter.com/share?url=' . esc_attr( $url_current_page ) . '&amp;text=' . esc_attr( $twitter_share_text ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 
 		// If image set is not custom.
 		if ( 'custom' !== $arr_settings['ssba_image_set'] && 'Y' !== $arr_settings['ssba_new_buttons'] && ! isset( $arr_settings['bar_call'] ) ) {
@@ -988,7 +993,7 @@ class Buttons {
 		}
 
 		// Diggit share link.
-		$html_share_buttons .= '<a data-site="digg" class="ssba_diggit_share ssba_share_link' . esc_attr( $plus_class ) . '" href="http://www.digg.com/submit?url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+		$html_share_buttons .= '<a data-site="digg" class="ssba_diggit_share ssba_share_link' . esc_attr( $plus_class ) . '" href="https://www.digg.com/submit?url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 
 		// If image set is not custom.
 		if ( 'custom' !== $arr_settings['ssba_image_set'] && 'Y' !== $arr_settings['ssba_new_buttons'] && ! isset( $arr_settings['bar_call'] ) ) {
@@ -1050,7 +1055,7 @@ class Buttons {
 		}
 
 		// Reddit share link.
-		$html_share_buttons .= '<a data-site="reddit" class="ssba_reddit_share' . esc_attr( $plus_class ) . '" href="http://reddit.com/submit?url=' . esc_attr( $url_current_page ) . '&amp;title=' . esc_attr( $str_page_title ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+		$html_share_buttons .= '<a data-site="reddit" class="ssba_reddit_share' . esc_attr( $plus_class ) . '" href="https://reddit.com/submit?url=' . esc_attr( $url_current_page ) . '&amp;title=' . esc_attr( $str_page_title ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 
 		// If image set is not custom.
 		if ( 'custom' !== $arr_settings['ssba_image_set'] && 'Y' !== $arr_settings['ssba_new_buttons'] && ! isset( $arr_settings['bar_call'] ) ) {
@@ -1099,7 +1104,7 @@ class Buttons {
 	 */
 	public function get_reddit_share_count( $url_current_page ) {
 		// Get results from reddit and return the number of shares.
-		$html_reddit_share_details = wp_safe_remote_get( 'http://www.reddit.com/api/info.json?url=' . $url_current_page, array(
+		$html_reddit_share_details = wp_safe_remote_get( 'https://www.reddit.com/api/info.json?url=' . $url_current_page, array(
 			'timeout' => 6,
 		) );
 
@@ -1152,7 +1157,7 @@ class Buttons {
 		}
 
 		// Linkedin share link.
-		$html_share_buttons .= '<a data-site="linkedin" class="ssba_linkedin_share ssba_share_link' . esc_attr( $plus_class ) . '" href="http://www.linkedin.com/shareArticle?mini=true&amp;url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+		$html_share_buttons .= '<a data-site="linkedin" class="ssba_linkedin_share ssba_share_link' . esc_attr( $plus_class ) . '" href="https://www.linkedin.com/shareArticle?mini=true&amp;url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 
 		// If image set is not custom.
 		if ( 'custom' !== $arr_settings['ssba_image_set'] && 'Y' !== $arr_settings['ssba_new_buttons'] && ! isset( $arr_settings['bar_call'] ) ) {
@@ -1187,7 +1192,7 @@ class Buttons {
 	 */
 	public function get_linkedin_share_count( $url_current_page ) {
 		// Get results from linkedin and return the number of shares.
-		$html_linkedin_share_details = wp_safe_remote_get( 'http://www.linkedin.com/countserv/count/share?url=' . $url_current_page, array(
+		$html_linkedin_share_details = wp_safe_remote_get( 'https://www.linkedin.com/countserv/count/share?url=' . $url_current_page, array(
 			'timeout' => 6,
 		) );
 
@@ -1254,7 +1259,7 @@ class Buttons {
 			}
 
 			// Pinterest share link.
-			$html_share_buttons .= '<a data-site="pinterest-featured" href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . esc_attr( $url_current_page ) . '&media=' . esc_attr( $url_post_thumb ) . '&description=' . esc_attr( $str_page_title ) . '" class="ssba_pinterest_share ssba_share_link' . esc_attr( $plus_class ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+			$html_share_buttons .= '<a data-site="pinterest-featured" href="https://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . esc_attr( $url_current_page ) . '&media=' . esc_attr( $url_post_thumb ) . '&description=' . esc_attr( $str_page_title ) . '" class="ssba_pinterest_share ssba_share_link' . esc_attr( $plus_class ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 		} else { // Not using featured images for pinterest.
 			// Use the choice of pinnable images approach.
 			$html_share_buttons .= "<a data-site='pinterest' class='ssba_pinterest_share" . esc_attr( $plus_class ) . "' href='javascript:void((function()%7Bvar%20e=document.createElement(&apos;script&apos;);e.setAttribute(&apos;type&apos;,&apos;text/javascript&apos;);e.setAttribute(&apos;charset&apos;,&apos;UTF-8&apos;);e.setAttribute(&apos;src&apos;,&apos;//assets.pinterest.com/js/pinmarklet.js?r=&apos;+Math.random()*99999999);document.body.appendChild(e)%7D)());'>";
@@ -1305,7 +1310,7 @@ class Buttons {
 	 */
 	public function get_pinterest_share_count( $url_current_page ) {
 		// Get results from pinterest.
-		$html_pinterest_share_details = wp_safe_remote_get( 'http://api.pinterest.com/v1/urls/count.json?url=' . $url_current_page, array(
+		$html_pinterest_share_details = wp_safe_remote_get( 'https://api.pinterest.com/v1/urls/count.json?url=' . $url_current_page, array(
 			'timeout' => 6,
 		) );
 
@@ -1350,7 +1355,7 @@ class Buttons {
 			( 'Y' === $arr_settings['ssba_bar_share_new_window']
 			  && isset( $arr_settings['bar_call']
 			) ) ? ' target="_blank" ' : '';
-		$url = 'http://www.stumbleupon.com/submit?url=' . esc_attr( $url_current_page ) . '&amp;title=' . esc_attr( $str_page_title );
+		$url = 'https://www.stumbleupon.com/submit?url=' . esc_attr( $url_current_page ) . '&amp;title=' . esc_attr( $str_page_title );
 		$plus_class = 'Y' === $arr_settings['ssba_new_buttons'] || isset( $arr_settings['bar_call'] ) ? ' ssbp-stumbleupon ssbp-btn' : '';
 		$count_class = 'Y' === $arr_settings['ssba_new_buttons'] || isset( $arr_settings['bar_call'] ) ? ' ssbp-each-share' : ' ssba_sharecount';
 		$html_share_buttons = '';
@@ -1408,7 +1413,7 @@ class Buttons {
 	 */
 	public function get_stumble_upon_share_count( $url_current_page ) {
 		// Get results from stumbleupon and return the number of shares.
-		$html_stumble_upon_share_details = wp_safe_remote_get( 'http://www.stumbleupon.com/services/1.01/badge.getinfo?url=' . $url_current_page, array(
+		$html_stumble_upon_share_details = wp_safe_remote_get( 'https://www.stumbleupon.com/services/1.01/badge.getinfo?url=' . $url_current_page, array(
 			'timeout' => 6,
 		) );
 
@@ -1645,7 +1650,7 @@ class Buttons {
 		}
 
 		// Tumblr share link.
-		$html_share_buttons .= '<a data-site="tumblr" class="ssba_tumblr_share' . esc_attr( $plus_class ) . '" href="http://www.tumblr.com/share/link?url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
+		$html_share_buttons .= '<a data-site="tumblr" class="ssba_tumblr_share' . esc_attr( $plus_class ) . '" href="https://www.tumblr.com/share/link?url=' . esc_attr( $url_current_page ) . '" ' . esc_attr( $target . $nofollow ) . '>';
 
 		// If image set is not custom.
 		if ( 'custom' !== $arr_settings['ssba_image_set'] && 'Y' !== $arr_settings['ssba_new_buttons'] && ! isset( $arr_settings['bar_call'] ) ) {
@@ -1692,7 +1697,7 @@ class Buttons {
 	 */
 	public function get_tumblr_share_count( $url_current_page ) {
 		// Get results from tumblr and return the number of shares.
-		$result = wp_safe_remote_get( 'http://api.tumblr.com/v2/share/stats?url=' . $url_current_page, array(
+		$result = wp_safe_remote_get( 'https://api.tumblr.com/v2/share/stats?url=' . $url_current_page, array(
 			'timeout' => 6,
 		) );
 
