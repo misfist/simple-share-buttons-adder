@@ -2,7 +2,7 @@
 /**
  * Admin Bits.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
@@ -10,7 +10,7 @@ namespace SimpleShareButtonsAdder;
 /**
  * Admin Bits Class
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 class Admin_Bits {
 

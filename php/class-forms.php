@@ -2,7 +2,7 @@
 /**
  * Forms.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
@@ -10,7 +10,7 @@ namespace SimpleShareButtonsAdder;
 /**
  * Forms Class
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 class Forms {
 

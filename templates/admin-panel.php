@@ -4,7 +4,7 @@
  *
  * The template wrapper for the admin panel.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 $selected_tab = get_option( 'ssba_selected_tab' );

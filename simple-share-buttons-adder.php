@@ -1,25 +1,25 @@
 <?php
 /**
- * Plugin Name: Simple Share Buttons Adder
- * Plugin URI: https://simplesharebuttons.com
+ * Plugin Name: Simple Share Buttons Adder Custom
+ * Plugin URI: https://github.com/misfist/simple-share-buttons-adder
  * Description: A simple plugin that enables you to add share buttons to all of your posts and/or pages.
- * Version: 7.4.18
+ * Version: 7.5.0
  * Author: Simple Share Buttons
  * Author URI: https://simplesharebuttons.com
  * License: GPLv2
 
-Copyright 2015 Simple Share Buttons admin@simplesharebuttons.com
+ * Copyright 2015 Simple Share Buttons admin@simplesharebuttons.com
 
-This program is free software; you can redistribute it and/or modify
-it under the terms of the GNU General Public License, version 2, as
-published by the Free Software Foundation.
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License, version 2, as
+ * published by the Free Software Foundation.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustomCustom
  */
 
 if ( version_compare( phpversion(), '5.3', '>=' ) ) {

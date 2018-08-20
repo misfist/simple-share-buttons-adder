@@ -4,7 +4,7 @@
  *
  * The template wrapper for the share bar tab.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 ?>

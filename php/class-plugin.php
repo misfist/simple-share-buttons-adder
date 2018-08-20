@@ -2,7 +2,7 @@
 /**
  * Bootstraps the Simple Share Buttons Adder plugin.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
