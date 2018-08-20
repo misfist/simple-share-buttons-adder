@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Simple Share Buttons Adder Custom
- * Plugin URI: https://simplesharebuttons.com
+ * Plugin URI: https://github.com/misfist/simple-share-buttons-adder
  * Description: A simple plugin that enables you to add share buttons to all of your posts and/or pages.
  * Version: 7.5.0
  * Author: Simple Share Buttons
