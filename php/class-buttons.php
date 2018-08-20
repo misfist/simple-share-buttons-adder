@@ -2,7 +2,7 @@
 /**
  * Buttons.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
@@ -10,7 +10,7 @@ namespace SimpleShareButtonsAdder;
 /**
  * Buttons Class
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 class Buttons {
 
@@ -755,7 +755,12 @@ class Buttons {
 		$html_share_buttons = '';
 
 		// Format the URL into friendly code.
-		$twitter_share_text = rawurlencode( html_entity_decode( $str_page_title . ' ' . $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
+		/*
+		Modified string
+		@since 7.5.0
+		 */
+		// $twitter_share_text = rawurlencode( html_entity_decode( $str_page_title . ' ' . $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
+		$twitter_share_text = rawurlencode( html_entity_decode( $arr_settings['ssba_twitter_text'], ENT_COMPAT, 'UTF-8' ) );
 
 		/*
 		Filter to modify Twitter message text

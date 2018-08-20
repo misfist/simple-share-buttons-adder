@@ -4,7 +4,7 @@
  *
  * The template wrapper for the plus tab.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 ?>

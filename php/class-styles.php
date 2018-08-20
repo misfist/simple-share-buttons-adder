@@ -2,7 +2,7 @@
 /**
  * Styles.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 namespace SimpleShareButtonsAdder;
@@ -10,7 +10,7 @@ namespace SimpleShareButtonsAdder;
 /**
  * Styles Class
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 class Styles {
 

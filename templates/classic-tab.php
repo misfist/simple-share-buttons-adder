@@ -4,7 +4,7 @@
  *
  * The template wrapper for the classic tab.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 ?>

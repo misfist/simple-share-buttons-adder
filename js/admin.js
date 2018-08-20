@@ -1,7 +1,7 @@
 ﻿/**
  * Simple Share Buttons Adder.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 /* exported SimpleShareButtonsAdder */

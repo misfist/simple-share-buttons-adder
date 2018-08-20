@@ -4,7 +4,7 @@
  *
  * The template wrapper for the admin header.
  *
- * @package SimpleShareButtonsAdder
+ * @package SimpleShareButtonsAdderCustom
  */
 
 ?>
