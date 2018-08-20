@@ -761,7 +761,7 @@ class Buttons {
 		Filter to modify Twitter message text
 		@since 7.5.0
 		*/
-		$twitter_share_text = apply_filters( 'ssba_twitter_share_text', $twitter_share_text, $arr_settings['ssba_twitter_text'] );
+		$twitter_share_text = apply_filters( 'ssba_twitter_share_text', esc_attr( $twitter_share_text ) );
 
 		// Add li if plus.
 		if ( 'Y' === $arr_settings['ssba_new_buttons'] || isset( $arr_settings['bar_call'] ) ) {
@@ -1449,7 +1449,7 @@ class Buttons {
 		Added filter to modify email message
 		@since 7.5.0
 		*/
-		$ssba_email_message = apply_filters( 'ssba_email_message', esc_attr( $arr_settings['ssba_email_message'] ), $arr_settings['ssba_email_message'] );
+		$ssba_email_message = apply_filters( 'ssba_email_message', esc_attr( $arr_settings['ssba_email_message'] ) );
 
 		$url = 'mailto:?subject=' . $email_title . '&amp;body=' . $ssba_email_message . ' ' . $url_current_page;
 		$plus_class = 'Y' === $arr_settings['ssba_new_buttons'] || isset( $arr_settings['bar_call'] ) ? ' ssbp-email ssbp-btn' : '';
